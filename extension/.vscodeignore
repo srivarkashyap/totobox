@@ -1,0 +1,33 @@
+# Source files (only ship compiled JavaScript)
+src/**
+!src/**/*.json
+**/*.ts
+!**/*.d.ts
+**/*.map
+.gitignore
+tsconfig.json
+.eslintrc.json
+.eslintconfig.*
+
+# Development folders
+.vscode/**
+.vscode-test/**
+node_modules/**
+out/test/**
+coverage/**
+.nyc_output/**
+
+# Documentation and config files that aren't needed in production
+*.md
+!README.md
+!CHANGELOG.md
+.env*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backend folder (not part of extension)
+../backend/**
+

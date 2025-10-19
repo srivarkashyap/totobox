@@ -1,0 +1,146 @@
+{
+  "name": "totobox",
+  "displayName": "totoboX - AI API Cost Tracker",
+  "description": "Real-time cost tracking and analytics for OpenAI, Anthropic, and other AI APIs directly in VS Code",
+  "version": "1.0.0",
+  "publisher": "srivarkashyap",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Data Science",
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "openai",
+    "anthropic",
+    "api",
+    "cost",
+    "tracking",
+    "analytics",
+    "ai",
+    "tokens",
+    "gpt",
+    "claude",
+    "llm",
+    "usage",
+    "monitoring"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "totobox.showDashboard",
+        "title": "Show Dashboard",
+        "category": "totoboX"
+      },
+      {
+        "command": "totobox.refreshData",
+        "title": "Refresh Data",
+        "category": "totoboX"
+      }
+    ],
+    "configuration": {
+      "title": "totoboX",
+      "properties": {
+        "totobox.backendUrl": {
+          "type": "string",
+          "default": "https://totobox.vercel.app",
+          "description": "Backend API URL for totoboX"
+        },
+        "totobox.environment": {
+          "type": "string",
+          "default": "production",
+          "enum": [
+            "development",
+            "staging",
+            "production"
+          ],
+          "description": "Environment to use for totoboX"
+        },
+        "totobox.refreshInterval": {
+          "type": "number",
+          "default": 30,
+          "minimum": 10,
+          "maximum": 300,
+          "description": "How often to refresh analytics data (in seconds)"
+        },
+        "totobox.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show notifications for totoboX actions"
+        },
+        "totobox.maxRetries": {
+          "type": "number",
+          "default": 3,
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Maximum number of retry attempts for failed requests"
+        },
+        "totobox.timeout": {
+          "type": "number",
+          "default": 15000,
+          "minimum": 5000,
+          "maximum": 60000,
+          "description": "Request timeout in milliseconds"
+        },
+        "totobox.logLevel": {
+          "type": "string",
+          "default": "info",
+          "enum": [
+            "error",
+            "warn",
+            "info",
+            "debug"
+          ],
+          "description": "Logging level for totoboX"
+        },
+        "totobox.enableTelemetry": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable anonymous usage telemetry"
+        },
+        "totobox.apiKeys": {
+          "type": "array",
+          "default": [],
+          "description": "Stored API key configurations (encrypted)",
+          "scope": "application"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srivarkashyap/totobox"
+  },
+  "bugs": {
+    "url": "https://github.com/srivarkashyap/totobox/issues"
+  },
+  "homepage": "https://github.com/srivarkashyap/totobox#readme",
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  }
+}
