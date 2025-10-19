@@ -1,1 +1,10 @@
-.vercel
+node_modules/
+**/node_modules/
+extension/out/
+*.vsix
+.env
+.env.local
+.DS_Store
+.vscode/
+*.log
+*.js.map
