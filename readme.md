@@ -218,7 +218,7 @@ MIT License - see [LICENSE](LICENSE)
 
 ## 🙏 Credits
 
-Built by [YOUR_NAME]
+Built by [SRIVAR KASHYAP]
 
 Special thanks to:
 - Supabase team for amazing backend infrastructure
