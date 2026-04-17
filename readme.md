@@ -1,4 +1,4 @@
-# 🎯 totoboX - Open Source AI API Cost Tracker
+# totoboX - Open Source AI API Cost Tracker (VS code Native)
 
 > Real-time cost tracking and analytics for AI APIs. Built with Supabase, Vercel, and VS Code Extension API.
 
